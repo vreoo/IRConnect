@@ -7,7 +7,7 @@ IRConnect is a simple chat application written in Java. It uses TCP sockets for 
 ### Clone the Repository:
 
 ```bash
-git clone https://github.com/your-username/Java-IRC-Chat.git
+git clone https://github.com/vreoo/IRConnect.git
 ```
 
 ### Compile the Code:
