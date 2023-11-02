@@ -22,7 +22,12 @@ public class Client {
                 System.out.println("Connected to server!");
 
                 while (true) {
+                    // add nickname to message + >
+                    System.out.print(nickname + "> ");
                     String message = console.nextLine();
+
+                    // start time for ping
+                    long startTime = System.currentTimeMillis();
 
                     // Handle special commands
                     if (message.equals("/exit")) {
@@ -31,12 +36,18 @@ public class Client {
                     } else if (message.equals("/help")) {
                         System.out.println("Commands:");
                         System.out.println("/nick <nickname> - Change your nickname");
+                        System.out.println("/ping - Ping the server");
                         System.out.println("/exit - Exit the program");
                         System.out.println("/help - Display this help message");
                         continue;
                     } else if (message.startsWith("/nick ")) {
                         nickname = message.substring(6);
                         System.out.println("Changed nickname to " + nickname);
+                        continue;
+                    } else if (message.startsWith("/ping")) {
+                        // Send ping message to server
+                        long endTime = System.currentTimeMillis();
+                        System.out.println("PONG! " + (endTime - startTime) + "ms");
                         continue;
                     }
 
