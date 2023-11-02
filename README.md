@@ -44,7 +44,7 @@ Once the client is running, you can type messages in the client's terminal and p
 
 ## License
 
-This project is licensed under the MIT License - see the LICENSE file for details.
+This project is licensed under the MIT License - see the [LICENSE](https://github.com/vreoo/IRConnect/blob/master/LICENSE) file for details.
 
 ## Acknowledgments
 
