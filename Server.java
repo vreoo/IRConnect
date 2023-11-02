@@ -23,12 +23,12 @@ public class Server {
                 PrintWriter out = new PrintWriter(socket.getOutputStream());
 
                 // Send a message to all clients that a new client has connected
-                broadcastMessage("\nNew client connected: " + socket.getInetAddress(), out);
+                broadcastMessage("New client connected: " + socket.getInetAddress(), out);
                 clients.add(out);
 
                 Thread thread = new Thread(new ClientHandler(socket, out));
                 thread.start();
-                System.out.println("\nClient connected: " + socket.getInetAddress());
+                System.out.println("Client connected: " + socket.getInetAddress());
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -70,7 +70,7 @@ class ClientHandler implements Runnable {
             try {
                 in.close();
                 // Gracefully close the socket and remove the client from the list
-                System.out.println("\nClient disconnected: " + socket.getInetAddress());
+                System.out.println("Client disconnected: " + socket.getInetAddress());
                 Server.clients.remove(new PrintWriter(socket.getOutputStream()));
                 socket.close();
             } catch (SocketException e) {

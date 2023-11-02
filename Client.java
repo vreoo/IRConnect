@@ -19,11 +19,10 @@ public class Client {
             try (Scanner console = new Scanner(System.in)) {
                 Thread receiveThread = new Thread(new ReceiveHandler(socket));
                 receiveThread.start();
-                System.out.println("Connected to server!");
+                System.out.println("Connected to server!\n");
 
                 while (true) {
                     // add nickname to message + >
-                    System.out.print(nickname + "> ");
                     String message = console.nextLine();
 
                     // start time for ping
@@ -52,7 +51,7 @@ public class Client {
                     }
 
                     // Send message to server
-                    out.println(nickname + ": " + message);
+                    out.println(nickname + "> " + message);
                 }
             }
         } catch (IOException e) {
