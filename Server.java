@@ -38,7 +38,7 @@ public class Server {
     public static void broadcastMessage(String message, PrintWriter sender) {
         for (PrintWriter client : clients) {
             if (client != sender) {
-                client.println("\n" + message);
+                client.println(message);
             }
             client.flush();
         }
