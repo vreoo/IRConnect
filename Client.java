@@ -48,6 +48,8 @@ public class Client {
                         long endTime = System.currentTimeMillis();
                         System.out.println("PONG! " + (endTime - startTime) + "ms");
                         continue;
+                    } else if (message.isEmpty()) {
+                        continue;
                     }
 
                     // Send message to server
